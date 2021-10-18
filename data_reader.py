@@ -19,10 +19,11 @@ class DataReader():
         filename = "data/" + os.listdir("data")[0]
         print(filename)
         data = np.loadtxt(filename, delimiter=",", skiprows=1, usecols=(1, 2, 3, 4, 5, 6))
-        data = data - np.min(data, axis=0) + 0.01
+        #data = data - np.min(data, axis=0) + 0.0001
+        data = data - np.min(data, axis=0) + 0.0001
         data = data / np.max(data, axis=0)
-        train_data = data[:int(len(data)*0.95)]
-        test_data = data[int(len(data)*0.95):]
+        train_data = data[:int(len(data)*0.55)]
+        test_data = data[int(len(data)*0.55):]
 
         train_X, train_Y = self.windowing(train_data, window_size)
         test_X, test_Y = self.windowing(test_data, window_size)
