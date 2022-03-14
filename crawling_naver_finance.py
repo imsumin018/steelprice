@@ -70,7 +70,7 @@ def insert_into_db(cursor, market_index, arr):
     logger.debug(res)
 
 def every():
-    conn = pymssql.connect(host=r"203.245.157.76", user='posco2', password='posco!@34', database='workdb', charset='utf8')
+    conn = pymssql.connect(host=r" ", user=' ', password='  ', database='workdb', charset='utf8')
     cursor = conn.cursor()
     driver = webdriver.Chrome(executable_path="D:\chromedriver_win32\chrome98\chromedriver")
 
